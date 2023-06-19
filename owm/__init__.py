@@ -1,0 +1,1 @@
+from owm.owmapi import *
