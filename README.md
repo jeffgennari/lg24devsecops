@@ -134,4 +134,4 @@ will show during the TravisCI pipeline run to assist in evaluating a
 pull request prior to merging. 
 
 #### Credit
-Credit to Jonathan Woytek for supporting this work.
+Credit to Jonathan Woytek for this exercise.
