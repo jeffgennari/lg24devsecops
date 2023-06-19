@@ -27,7 +27,7 @@ the project's performance in the pipeline.
 
 ### General Procedure
 #### I. Setup
-1. Fork the repo https://github.com/jwoytek/2022-devsecops-example to your own Github account
+1. Fork the repo 'https://jeffgennari@github.com/jeffgennari/lg23devsecops to your own Github account
 2. Go into your Github user settings
 3. Scroll down to select "Applications". You should see TravisCI and SonarCloud here.
 4. Click "Configure" for TravisCI.
