@@ -119,6 +119,13 @@ by the latest commit, SonarCloud.io should show a report on the project
 scan, and coveralls.io should show a report on code coverage from the
 tests. 
 
+#### GitHub Actions
+If you would like to try a different pipeline, GitHub Actions is configured for manual builds. in the directory `.github/workflows/manual.yml`. This pipeline is run manually by pressing `Actions > Run Workflow` from the repository settings. You should inspect the `manual.yml` file because it has a number of dependencies that must be satisfied. In particular, SonarCloud you to set a SONAR_TOKEN for the project. To set this token, do the following 
+    * In your GitHub repository, go to `Settings > Secrets > Actions` and create a new secret with the following details:
+    * In the Name field, enter SONAR_TOKEN 
+    * in the Value field, enter the hash that Jeff provides.
+
+When you run the workflow, you will see the SonarCloud analysis in SonarCloud (e.g. https://sonarcloud.io/summary/overall?id=jgennari-2023-devsecops-example). Simiarlly, you will see the Coveralls report in the Coveralls website (e.g. https://coveralls.io/github/jeffgennari/lg23devsecops). The specific URLs may change to reflect your account.
 
 #### Extension
 You should notice that the code is not 100% covered by tests. Use the
