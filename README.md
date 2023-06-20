@@ -18,7 +18,7 @@ the project's performance in the pipeline.
 
 ## Instructions
 ### Prerequisites
-* Python 3.7+ (tested against 3.8 and 3.9)
+* Python 3.7+ (tested against 3.9)
 * Python virtual environment module (I use `virtualenv` (`pip3 install virtualenv`))
 * Github account
 * travis-ci.com account (https://travis-ci.com, sign in with your Github account, choose the free plan, don't add any projects yet)
