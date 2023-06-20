@@ -20,10 +20,11 @@ the project's performance in the pipeline.
 ### Prerequisites
 * Python 3.7+ (tested against 3.9)
 * Python virtual environment module (I use `virtualenv` (`pip3 install virtualenv`))
-* Github account
+* Github account and GitHub Actions
 * travis-ci.com account (https://travis-ci.com, sign in with your Github account, choose the free plan, don't add any projects yet)
 * coveralls.io account (https://coveralls.io, sign in with your Github account, choose the free plan, don't add any projects yet)
 * sonarcloud.io account (https://sonarcloud.io, sign in with your Github account, choose the free plan, don't add any projects yet)
+* .io account (https://sonarcloud.io, sign in with your Github account, choose the free plan, don't add any projects yet)
 
 ### General Procedure
 #### I. Setup
@@ -63,7 +64,35 @@ repository root named `.apikey`. Once this is done, you should be able
 to run `test.py` to see the weather in Pittsburgh and at a nearby 
 location.
 
-#### IV. Configure the Pipeline
+#### IV. Configure the Pipeline (GitHub Actions)
+
+1. Go to your SonarCloud.io account.
+2. Use the "+" menu at the top right to add a new orginaization/project.
+3. Use manual creation to create a new organization. Give your organization a unique name.
+4. Create a new project.
+5. In the page that the says *Choose your Analysis Method* choose *With GitHub Actions*
+4. When asked to choose your analysis method, pick "With Travis CI".
+5. Copy the "SONAR_TOKEN" key listed. We will use this in a future step.
+6. Go back to your repo.
+7. Go to the repo settings and navigate to `Secrets and variables > Actions` and create a new repository secret named `SONAR_TOKEN` with a value being the hash copied from SonarCloud.
+8. Go to https://coveralls.io/sign-up and sign up/in using your GitHub Account (Authorize the app)
+9. Click the `Add repo` button and turn the lgdevsecops repo `on`.
+10. Go back to the repo and navigate to `/.github/workflows/manual.yml`
+11. Inspect this file and note how it differs from Travis CI's YML file.
+12. Edit the YML file to change the sonar organization and project to *your* project:
+
+```
+    SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          args: >
+            -Dsonar.organization=[CHANGE TO ORG] 
+            -Dsonar.projectKey=[CHANGE TO PROJECT]  
+```
+
+Finally, run the actions by pressing `Actions > Run Workflow > Manual Trigger Workflow > Run workflow` from the Actions page (you many need to approve the actions).
+
+Your results will be available on SonarCloud and Coveralls respectively.
+
+#### IV. Configure the Pipeline (Travis CI)
 1. Go to your SonarCloud.io account.
 2. Use the "+" menu at the top right to add a new project.
 3. You should see your repo listed here. Select it to import the project.
@@ -92,7 +121,6 @@ location.
 25. Locate your repo in the list and click the switch to "on". You may
     have to click "Sync Repos" if your repo does not appear.
 
-
 #### Trigger a TravisCI Build
 TravisCI will build whenever a commit is pushed to your repo. You can also
 trigger a build manually from within TravisCI. Here, we are going to 
@@ -119,16 +147,6 @@ by the latest commit, SonarCloud.io should show a report on the project
 scan, and coveralls.io should show a report on code coverage from the
 tests. 
 
-#### GitHub Actions
-Travis CI's free plan may still require you to enter personal information. Ïf you would like to try a different pipeline, GitHub Actions is configured for this project. GitHub Actions are composed of *apps* that you can find in a marketplace (https://github.com/marketplace). You compose these apps in the YML file within the `.github/workflows/` directory. You can set a number of different triggers for GitHub Actions, such as on commit. For this project manual build are configured. using the file: `.github/workflows/manual.yml`. This pipeline is run  by pressing `Actions > Run Workflow` from the repository page. You should inspect the `manual.yml` file because it has a number of dependencies that must be satisfied. In particular, SonarCloud you to set a SONAR_TOKEN for the project. To set this token, do the following: 
-
-* In your GitHub repository, go to `Settings > Secrets > Actions` and create a new secret with the following details:
-* In the Name field, enter SONAR_TOKEN 
-* in the Value field, enter the hash that Jeff provides via the meeting chat.
-
-When you run the workflow, you will see the SonarCloud analysis in SonarCloud (e.g. https://sonarcloud.io/summary/overall?id=jgennari-2023-devsecops-example). Simiarlly, you will see the Coveralls report in the Coveralls website (e.g. https://coveralls.io/github/jeffgennari/lg23devsecops). The specific URLs may change to reflect your account.
-
-One of the nice things about GitHub actions is that we can see results for public repositories.
 
 #### Extension
 You should notice that the code is not 100% covered by tests. Use the
