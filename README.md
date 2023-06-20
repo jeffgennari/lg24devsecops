@@ -134,13 +134,15 @@ You should notice that the code is not 100% covered by tests. Use the
 reporting in coveralls.io to locate the code that is not covered by 
 tests, and create tests such that coverage reaches 100%. 
 
-SonarCloud.io will show some "code sniffs", pointing out some things that
+SonarCloud.io will show some "code smells", pointing out some things that
 could be improved in the code. Attempt to fix these inefficiencies. 
 
 Create a branch and made some modifications to the branch, then create
 a pull request. Observe the automatic testing and reporting that Github
 will show during the TravisCI pipeline run to assist in evaluating a
 pull request prior to merging. 
+
+As a second extension, install an additional security-related GitHub Action from the marketplace (https://github.com/marketplace?type=actions).
 
 #### Credit
 Credit to Jonathan Woytek for this exercise.
