@@ -31,7 +31,7 @@ the project's performance in the pipeline.
 2. Go into your Github user settings
 3. Scroll down to select "Applications". You should see TravisCI and SonarCloud here.
 4. Click "Configure" for TravisCI.
-5. Under Repository Access, choose "Only select repositories", and select your fork of the 2022-devsecops-example repository from the drop-down.
+5. Under Repository Access, choose "Only select repositories", and select your fork of the 2023-devsecops-example repository from the drop-down.
 6. Read and click through any approval prompts. 
 7. Click Save.
 8. You will be redirected to the TravisCI page to finish configuration.
@@ -39,13 +39,13 @@ the project's performance in the pipeline.
    repository will be listed. 
 9. Go back to Github Settings, and click again on "Applications" on the left bar.
 10. Click "Configure" for SonarCloud.
-11. Under Repository Access, choose "Only select repositories", and select your fork of the 2022-devsecops-example repository from the drop-down.
+11. Under Repository Access, choose "Only select repositories", and select your fork of the 2023-devsecops-example repository from the drop-down.
 12. Read and click through any approval prompts. 
 13. Click Save.
 14. You will be redirected to the SonarCloud site to finish
     configuration. It is OK to click back to Github at this point.
 14. Clone your forked repository to your development machine.
-15. cd into the 2022-devsecops-example directory.
+15. cd into the 2023-devsecops-example directory.
 16. Create a virtual environment for testing: `virtualenv -p python3 venv`
 17. Activate the virtual environment: `. venv/bin/activate`
 18. Install the Python requirements: `pip3 install -r requirements.txt`
@@ -77,7 +77,7 @@ location.
 10. Click your profile photo in the top right, then go to the Security tab.
 11. Create a token. The name does not matter. Copy the token. We will use this in a future step. 
 12. Go to your TravisCI account.
-13. Select your 2022-devsecops-example repository.
+13. Select your 2023-devsecops-example repository.
 14. From the menu at the right, choose "Settngs".
 15. Under Environment Variables, enter a new variable named "SONAR_TOKEN", and paste in the security token you copied in step 5.
 16. Click "Add" to add the variable.
