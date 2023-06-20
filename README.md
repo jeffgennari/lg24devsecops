@@ -127,6 +127,8 @@ If you would like to try a different pipeline, GitHub Actions is configured for 
 
 When you run the workflow, you will see the SonarCloud analysis in SonarCloud (e.g. https://sonarcloud.io/summary/overall?id=jgennari-2023-devsecops-example). Simiarlly, you will see the Coveralls report in the Coveralls website (e.g. https://coveralls.io/github/jeffgennari/lg23devsecops). The specific URLs may change to reflect your account.
 
+One of the nice things about GitHub actions is that we can see results for public repositories.
+
 #### Extension
 You should notice that the code is not 100% covered by tests. Use the
 reporting in coveralls.io to locate the code that is not covered by 
