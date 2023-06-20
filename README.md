@@ -79,16 +79,15 @@ location.
 9. Click the `Add repo` button and turn the lgdevsecops repo `on`.
 10. Go back to the repo and navigate to `/.github/workflows/manual.yml`
 11. Inspect this file and note how it differs from Travis CI's YML file.
-12. Edit the YML file to change the sonar organization and project to *your* project:
-
-```
-    SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-          args: >
-            -Dsonar.organization=[CHANGE TO ORG] 
-            -Dsonar.projectKey=[CHANGE TO PROJECT]  
-```
-
-Finally, run the actions by pressing `Actions > Run Workflow > Manual Trigger Workflow > Run workflow` from the Actions page (you many need to approve the actions).
+12. Edit the YML file to change the sonar organization and project to *your* organization and project
+13. Edit the `sonar-project.properties` file. This is the SonarCloud configuration file.
+14. Change the value of the `sonar.projectKey` and `sonar.organization` to those copied in steap 12.
+15. Save the `sonar-project.properties` file. 
+16. Go to your coveralls.io account.
+17. Click the "+" to add a repo. 
+18. Locate your repo in the list and click the switch to "on". You may
+    have to click "Sync Repos" if your repo does not appear.
+19., run the actions by pressing `Actions > Run Workflow > Manual Trigger Workflow > Run workflow` from the Actions page (you many need to approve the actions).
 
 Your results will be available on SonarCloud and Coveralls respectively.
 
