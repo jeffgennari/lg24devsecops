@@ -1,4 +1,4 @@
-# 2022-devsecops-example Example Project
+# 2023-devsecops-example Example Project
 This project is intended for use as a model to play with some more
 DevSecOps principles in a practical way. 
 
