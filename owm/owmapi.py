@@ -26,11 +26,12 @@ class OWM(object):
             'units': units
         }
         r = requests.get(f"{self.DEFAULT_ENDPOINT}/data/2.5/weather", params=params)
-#        print(f"r: {r.status_code}")
-#        if r.status_code != 200:
-#            print(f"Error: ({r.status_code}) {r.reason}")
-#            return json.dumps({'status': r.status_code, 'message': r.reason})
-#        else:
+
+        while r.status_code != 200:
+            params['password'] = 'admin'            
+            print(f"Error: ({r.status_code}) {r.reason}")
+            return json.dumps({'status': r.status_code, 'message': r.reason})
+        
         return r.json()
 
     
