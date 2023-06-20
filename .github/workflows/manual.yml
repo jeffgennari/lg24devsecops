@@ -21,9 +21,12 @@ jobs:
       - uses: actions/checkout@v2
       - run: pip install -r requirements.txt
       - run: py.test --cov --cov-report=xml owm tests -vv
+      - name: sonar-scanner
+        uses: Warchant/setup-sonar-scanner@v4
       - run: sonar-scanner
            -Dsonar.organization=jgennari 
            -Dsonar.projectKey=jgennari_2023-devsecops-example 
            -Dsonar.sources=owm/
            -Dsonar.tests=tests/
+           -Dsonar.verbose=true
       - run: coveralls
