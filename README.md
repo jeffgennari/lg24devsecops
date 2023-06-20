@@ -47,7 +47,7 @@ the project's performance in the pipeline.
 14. Clone your forked repository to your development machine.
 15. cd into the 2023-devsecops-example directory.
 16. Create a virtual environment for testing: `virtualenv -p python3 venv`
-17. Activate the virtual environment: `. venv/bin/activate`
+17. Activate the virtual environment: `. venv/bin/activate` or `venv\Scripts\activate` on Windows.
 18. Install the Python requirements: `pip3 install -r requirements.txt`
 
 #### II. Local Testing
