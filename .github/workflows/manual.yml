@@ -37,12 +37,5 @@ jobs:
         uses: coverallsapp/github-action@v2
         with:
           github-token: ${{ github.token }}  
-      - name: Run Pysa Action
-        uses: facebook/pysa-action@0.0.1
-        with:
-          repo-directory: './'
-          requirements-path: 'requirements.txt'
-          infer-types: true
-          include-default-sapp-filters: false
-#           sapp-filters-directory: path/to/custom-filters
+     
 
