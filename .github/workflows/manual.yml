@@ -38,5 +38,7 @@ jobs:
         with:
           github-token: ${{ github.token }}  
       - name: Python Safety Check
+        env:
+          DEP_PATH: requirements.txt
         uses: aufdenpunkt/python-safety-check@v1.0.5
 
