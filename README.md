@@ -71,17 +71,17 @@ location.
 3. Use manual creation to create a new organization. Give your organization a unique name.
 4. Create a new project.
 5. In the page that the says *Choose your Analysis Method* choose *With GitHub Actions*
-4. When asked to choose your analysis method, pick "With Travis CI".
+4. When asked to choose your analysis method, pick "With GitHub Actions".
 5. Copy the "SONAR_TOKEN" key listed. We will use this in a future step.
 6. Go back to your repo.
-7. Go to the repo settings and navigate to `Secrets and variables > Actions` and create a new repository secret named `SONAR_TOKEN` with a value being the hash copied from SonarCloud.
+7. Go to the repo settings and navigate to `Secrets and variables > Actions` and create a new repository secret named `SONAR_TOKEN` with a value being the key copied from SonarCloud.
 8. Go to https://coveralls.io/sign-up and sign up/in using your GitHub Account (Authorize the app)
 9. Click the `Add repo` button and turn the lgdevsecops repo `on`.
 10. Go back to the repo and navigate to `/.github/workflows/manual.yml`
 11. Inspect this file and note how it differs from Travis CI's YML file.
-12. Edit the YML file to change the sonar organization and project to *your* organization and project
+12. Edit the YML file to change the sonar organization and project (projectKey) to *your* organization and project
 13. Edit the `sonar-project.properties` file. This is the SonarCloud configuration file.
-14. Change the value of the `sonar.projectKey` and `sonar.organization` to those copied in steap 12.
+14. Change the value of the `sonar.projectKey` and `sonar.organization` to those used in steap 12. This information is also available on `SonarCLoud > [your repo] > information`
 15. Save the `sonar-project.properties` file. 
 16. Go to your coveralls.io account.
 17. Click the "+" to add a repo. 
