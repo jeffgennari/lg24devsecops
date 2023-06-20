@@ -1,0 +1,26 @@
+name: Manual Trigger Workflow
+on:
+  workflow_dispatch:
+    inputs:
+      name:
+        description: "Mnaual Trigger"
+        default: "MT"
+jobs:
+  build:
+    runs-on: '${{ matrix.os }}'
+    strategy:
+      matrix:
+        os:
+          - ubuntu-18.04
+        python-version:
+          - '3.9'
+    steps:
+      - name: 'Set up Python ${{ matrix.python-version }}'
+        uses: actions/setup-python@v2
+        with:
+          python-version: '${{ matrix.python-version }}'
+      - uses: actions/checkout@v2
+      - run: pip install -r requirements.txt
+      - run: py.test --cov --cov-report=xml owm tests -vv
+      - run: sonar-scanner
+      - run: coveralls
