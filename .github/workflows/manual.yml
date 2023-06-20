@@ -25,7 +25,7 @@ jobs:
         uses: Warchant/setup-sonar-scanner@v4
       - run: sonar-scanner
            -Dsonar.organization=jgennari 
-           -Dsonar.projectKey=jgennari_2023-devsecops-example 
+           -Dsonar.projectKey=jgennari-2023-devsecops-example 
            -Dsonar.sources=owm/
            -Dsonar.tests=tests/
            -Dsonar.verbose=true
