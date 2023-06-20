@@ -26,16 +26,13 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        with:
-#           projectBaseDir: my-custom-directory
           args: >
             -Dsonar.organization=jgennari 
             -Dsonar.projectKey=jgennari-2023-devsecops-example 
             -Dsonar.sources=owm/
             -Dsonar.tests=tests/
             -Dsonar.verbose=true
-#       - name: sonar-scanner
-#         uses: Warchant/setup-sonar-scanner@v4
-#       - run: sonar-scanner
-            
-      - run: coveralls
+      - name: Coveralls
+        uses: coverallsapp/github-action@v2
+        with:
+          github-token: ${{ github.token }}       
