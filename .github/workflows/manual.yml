@@ -7,13 +7,12 @@ on:
         default: "MT"
 jobs:
   build:
-    runs-on: '${{ matrix.os }}'
+    runs-on: ubuntu-latest
     strategy:
       matrix:
         os:
           - ubuntu-18.04
-        python-version:
-          - '3.9'
+        python-version: ["3.9", "3.10", "3.11"]
     steps:
       - name: 'Set up Python ${{ matrix.python-version }}'
         uses: actions/setup-python@v2
@@ -23,4 +22,8 @@ jobs:
       - run: pip install -r requirements.txt
       - run: py.test --cov --cov-report=xml owm tests -vv
       - run: sonar-scanner
+           -Dsonar.organization=jgennari 
+           -Dsonar.projectKey=jgennari_2023-devsecops-example 
+           -Dsonar.sources=owm/
+           -Dsonar.tests=tests/
       - run: coveralls
