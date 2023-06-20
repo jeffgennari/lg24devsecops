@@ -44,5 +44,5 @@ jobs:
           requirements-path: 'requirements.txt'
           infer-types: true
           include-default-sapp-filters: false
-          sapp-filters-directory: path/to/custom-filters
+#           sapp-filters-directory: path/to/custom-filters
 
