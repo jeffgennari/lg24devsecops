@@ -120,10 +120,10 @@ scan, and coveralls.io should show a report on code coverage from the
 tests. 
 
 #### GitHub Actions
-If you would like to try a different pipeline, GitHub Actions is configured for manual builds. in the directory `.github/workflows/manual.yml`. This pipeline is run manually by pressing `Actions > Run Workflow` from the repository settings. You should inspect the `manual.yml` file because it has a number of dependencies that must be satisfied. In particular, SonarCloud you to set a SONAR_TOKEN for the project. To set this token, do the following 
+Travis CI's free plan may still require you to enter personal information. Ïf you would like to try a different pipeline, GitHub Actions is configured for this project. GitHub Actions are composed of *apps* that you can find in a marketplace (https://github.com/marketplace). You compose these apps in the YML file within the `.github/workflows/` directory. You can set a number of different triggers for GitHub Actions, such as on commit. For this project manual build are configured. using the file: `.github/workflows/manual.yml`. This pipeline is run  by pressing `Actions > Run Workflow` from the repository page. You should inspect the `manual.yml` file because it has a number of dependencies that must be satisfied. In particular, SonarCloud you to set a SONAR_TOKEN for the project. To set this token, do the following: 
     * In your GitHub repository, go to `Settings > Secrets > Actions` and create a new secret with the following details:
     * In the Name field, enter SONAR_TOKEN 
-    * in the Value field, enter the hash that Jeff provides.
+    * in the Value field, enter the hash that Jeff provides via the meeting chat.
 
 When you run the workflow, you will see the SonarCloud analysis in SonarCloud (e.g. https://sonarcloud.io/summary/overall?id=jgennari-2023-devsecops-example). Simiarlly, you will see the Coveralls report in the Coveralls website (e.g. https://coveralls.io/github/jeffgennari/lg23devsecops). The specific URLs may change to reflect your account.
 
