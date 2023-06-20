@@ -110,7 +110,7 @@ Your results will be available on SonarCloud and Coveralls respectively.
 15. Under Environment Variables, enter a new variable named "SONAR_TOKEN", and paste in the security token you copied in step 5.
 16. Click "Add" to add the variable.
 17. In the repository directory, edit the `.travis.yml` file. This is the TravisCI configuration file. 
-18. Locate the "organization" value under "sonarcloud". It is set to "jwoytek" by default. Change this to the value of `sonar.organization` copied in step 9.
+18. Locate the "organization" value under "sonarcloud". It is set to "jgennari" by default. Change this to the value of `sonar.organization` copied in step 9.
 19. Save the `.travis.yml` file. 
 20. Edit the `sonar-project.properties` file. This is the SonarCloud configuration file.
 21. Change the value of the `sonar.projectKey` and `sonar.organization` to those copied in steap 9.
@@ -163,4 +163,4 @@ pull request prior to merging.
 As a second extension, install an additional security-related GitHub Action from the marketplace (https://github.com/marketplace?type=actions).
 
 #### Credit
-Credit to Jonathan Woytek for this exercise.
+Thanks to Jonathan Woytek for this exercise.
