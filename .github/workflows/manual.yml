@@ -35,4 +35,7 @@ jobs:
       - name: Coveralls
         uses: coverallsapp/github-action@v2
         with:
-          github-token: ${{ github.token }}       
+          github-token: ${{ github.token }}  
+      - name: Python Safety Check
+        uses: aufdenpunkt/python-safety-check@v1.0.5
+
