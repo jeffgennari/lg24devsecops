@@ -36,6 +36,13 @@ jobs:
       - name: Coveralls
         uses: coverallsapp/github-action@v2
         with:
-          github-token: ${{ github.token }}  
+          github-token: ${{ github.token }} 
+      - name: Pyre Action
+        uses: facebook/pyre-action@v0.0.1
+        with:
+          # Path to the python source code you want to type check. If you want to type check the root of your repo, use './'. A .pyre_configuration file should exist here, if not, a default configuration will be used.
+          repo-directory: './'
+          requirements-path: './requirements.txt'
+       
      
 
